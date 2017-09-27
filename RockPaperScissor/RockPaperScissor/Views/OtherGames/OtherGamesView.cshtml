@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "OtherGamesView";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/Common-Script.js"></script>
+    <link href="~/Content/Common-Style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container" id="maincontainer">
+        <h2>@ViewBag.OtherGamesTitle</h2>
+        <form name="myForm" class="form-horizontal">         
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-5">
+                    <a href="http://www.miniclip.com/games/flip-diving/en/#t-w-t-H">
+                        <input type="button" value="Flip Diving" class="btn btn-primary btn-block" />
+                    </a>                   
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-5">
+                    <a href="http://www.miniclip.com/games/tanki-online/en/#t-w-t-H">
+                        <input type="button" value="Tanki Online" class="btn btn-primary btn-block" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-5">
+                    <a href="http://www.miniclip.com/games/soccer-physics/en/#t-w-t-H">
+                        <input type="button" value="Soccer Physics" class="btn btn-primary btn-block" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-5">
+                    <a href="http://www.miniclip.com/games/basketball-stars/en/#t-w-t-H">
+                        <input type="button" value="BasketBall Start" class="btn btn-primary btn-block" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-5">
+                    @Html.ActionLink("Back to Home", "Index", "Home", null, new { @class = "btn btn-primary btn-block" })
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

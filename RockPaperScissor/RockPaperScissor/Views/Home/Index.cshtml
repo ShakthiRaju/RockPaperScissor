@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/Common-Script.js"></script>
+    <link href="~/Content/Common-Style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container" id="maincontainer">
+        <h2>@ViewBag.HomeTitle</h2>
+        <form name="myForm" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-5">  
+                    @Html.ActionLink("Rock Paper Scissors Game", "RockPaperScissorView", "RockPaperScissor",null, new { @class = "btn btn-primary btn-block" })                  
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-5">
+                    @Html.ActionLink("Other Games", "OtherGamesView", "OtherGames",null, new { @class = "btn btn-primary btn-block" })
+
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

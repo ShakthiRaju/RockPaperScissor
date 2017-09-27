@@ -1,0 +1,159 @@
+﻿@{
+    ViewBag.Title = "RockPaperScissorView";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/Common-Script.js"></script>
+    <link href="~/Content/Common-Style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container" id="maincontainer">
+
+        <h2>@ViewBag.RockPaperScissorTitle</h2>
+        <form name="myForm" class="form-horizontal">
+            <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-4">
+                        <input type="text" class="form-control" id="userName" placeholder="Please Enter Name">
+                    </div>
+            </div>
+
+            <div class="form-group">              
+                <div class="col-sm-offset-1 col-sm-4">
+                     <input type="button" value="You Vs Computer" id="playerButton" class="btn btn-primary btn-block">
+                </div>
+                <div class="col-sm-offset-1 col-sm-4">
+                    <input type="button" value="Computer Vs Computer" id="computerButton" class="btn btn-primary btn-block">
+                </div>
+            </div>
+         </form>
+       
+         <form id="playerForm" class="form-horizontal">
+            <div class="form-group">
+                    <label id="innerFormHeading" class="control-label  col-sm-offset-3 col-sm-5">Player vs Computer Game</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="YourScore">Player </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="playerScore" value="0" placeholder=" Score">
+                </div>
+                <label class="control-label col-sm-1" for="tieScore">Tie </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="tieScore" value="0" placeholder=" Score">
+                </div>
+                <label class="control-label col-sm-2" for="ComputerScore">Computer </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="computerScore" value="0" placeholder="Score">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-3">
+                    <input type="button" name="Rock" value="Rock" id="rockButton" class="btn btn-primary btn-block">
+                </div>
+                <div class="col-sm-offset-0 col-sm-3">
+                    <input type="button" name="Paper" value="Paper" id="paperButton" class="btn btn-primary btn-block">
+                </div>
+                <div class="col-sm-offset-0 col-sm-3">
+                    <input type="button" name="Scissors" value="Scissors" id="scissorsButton" class="btn btn-primary btn-block">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label  col-sm-offset-4 col-sm-3">Match Result</label>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="yourresult">Player </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="playerResult" placeholder="Result">
+                </div>
+                <label class="control-label col-sm-offset-3 col-sm-2" for="computerresult">Computer</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="computerResult" placeholder="Result">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label id="resultLabel" class="control-label  col-sm-offset-4 col-sm-3" hidden style="color:green">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-3">
+                    <input type="button" value="End Game" id="playerEndGame" class="btn btn-primary btn-block">
+                </div>
+                <div class="col-sm-offset-2 col-sm-3">
+                    @Html.ActionLink("Back to Home", "Index", "Home", null, new { @class = "btn btn-primary btn-block" })
+                </div>
+            </div>
+        </form>
+
+        <form id="computerForm" class="form-horizontal">
+            <div class="form-group">
+                <label id="innerFormHeading" class="control-label  col-sm-offset-3 col-sm-5">Computer vs Computer Game</label>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="YourScore">Computer1 </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="computer1Score" value="0" placeholder=" Score">
+                </div>
+                <label class="control-label col-sm-1" for="TieCScore">Tie </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="TieCScore" value="0" placeholder=" Score">
+                </div>
+                <label class="control-label col-sm-2" for="ComputerScore">Computer2 </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="computer2Score" value="0" placeholder="Score">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-3">
+                    <input type="button" value="Start" id="startGame" class="btn btn-primary btn-block">
+                </div>
+                <div class="col-sm-offset-2 col-sm-3">
+                    <input type="button" value="Stop" id="stopGame" class="btn btn-primary btn-block">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label  col-sm-offset-3 col-sm-5">Computer Vs Computer Result</label>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="computer1result">Computer1 </label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="computer1Result" placeholder="Result">
+                </div>
+                <label class="control-label col-sm-offset-3 col-sm-2" for="computer2result">Computer2</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="computer2Result" placeholder="Result">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label id="comresultLabel" class="control-label  col-sm-offset-4 col-sm-3" hidden style="color:green">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-3">
+                    <input type="button" value="End Game" id="computerEndGame" class="btn btn-primary btn-block">
+                </div>
+                <div class="col-sm-offset-2 col-sm-3">
+                    @Html.ActionLink("Back to Home", "Index", "Home", null, new { @class = "btn btn-primary btn-block" })                       
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>

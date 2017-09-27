@@ -1,0 +1,36 @@
+﻿
+body 
+{
+    background-color:#E0F2F7;
+}
+
+#maincontainer
+{
+    margin: auto;
+    margin-top :50px;
+    width: 50%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    text-align: center;
+}
+
+#playerForm,#computerForm
+{
+    margin: auto;
+    width: 100%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+    text-align: center;
+}
+
+ .tdalign
+ {
+    display: block;
+    margin: auto;
+ }
+
+
+h2
+{
+    text-align:center;
+}
